@@ -1,0 +1,42 @@
+<div class="bg-gray vh-100 p-4">
+  <h5>Employees</h5>
+  <div class="container bg-white p-4 rounded">
+    <div class="row">
+      <div class="col-md-6">
+        <input
+          type="text"
+          placeholder="Search Employees"
+          class="form-control w-250px py-2 form-control-solid"
+        />
+      </div>
+      <div class="col-md-6">
+        <input type="text" class="form-control" placeholder="" />
+        <button class="btn bg-blue text-white">Add Employee</button>
+      </div>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>NAME</th>
+          <th>EMAIL</th>
+          <th>PHONE NO.</th>
+          <th>BRANCH</th>
+          <th>PRIVELLGE</th>
+          <th>STATUS</th>
+          <th>SETTINGS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees">
+          <td class="emp-name">{{ employee.Name }}</td>
+          <td>{{ employee.Email }}</td>
+          <td>{{ employee.PhoneNo }}</td>
+          <td>{{ employee.Branch }}</td>
+          <td>{{ employee.Privellge }}</td>
+          <td>{{ employee.IsActive }}</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
