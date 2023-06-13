@@ -1,0 +1,58 @@
+<div class="container my-5">
+  <div class="row justify-content-center ">
+    <div class="col-md-2 ">
+      <button
+        class="fw-bold px-4 py-2 btn"
+        [ngClass]="{ 'btn-info text-light ': selectedState === '' }"
+        (click)="selectState('')"
+      >
+        All
+      </button>
+    </div>
+    <div class="col-md-2 ">
+      <button
+        class="fw-bold px-4 py-2 btn"
+        [ngClass]="{ 'btn-info text-light ': selectedState === 'New' }"
+        (click)="selectState('New')"
+      >
+        New
+      </button>
+    </div>
+    <div class="col-md-2 ">
+      <button
+        class="fw-bold px-4 py-2 btn"
+        [ngClass]="{ 'btn-info text-light': selectedState === 'Delayed' }"
+        (click)="selectState('Delayed')"
+      >
+        Delayed
+      </button>
+    </div>
+    <div class="col-md-2 ">
+      <button
+        class="fw-bold px-4 py-2 btn"
+        [ngClass]="{ 'btn-info text-light ': selectedState === 'Waiting' }"
+        (click)="selectState('Waiting')"
+      >
+        Waiting
+      </button>
+    </div>
+    <div class="col-md-2 ">
+      <button
+        class="fw-bold px-4 py-2 btn"
+        [ngClass]="{ 'btn-info text-light': selectedState === 'Rejected' }"
+        (click)="selectState('Rejected')"
+      >
+        Rejected
+      </button>
+    </div>
+    <div class="col-md-2 ">
+      <button
+        class="fw-bold px-4 py-2 btn"
+        [ngClass]="{ 'btn-info text-light': selectedState === 'Delivered' }"
+        (click)="selectState('Delivered')"
+      >
+        Delivered
+      </button>
+    </div>
+  </div>
+</div>
