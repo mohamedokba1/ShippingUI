@@ -1,17 +1,31 @@
-<div class="bg-gray vh-100 p-4">
-  <h5>Employees</h5>
-  <div class="container bg-white p-4 rounded">
-    <div class="row">
-      <div class="col-md-6">
-        <input
-          type="text"
-          placeholder="Search Employees"
-          class="form-control w-250px py-2 form-control-solid"
-        />
+<div class="vh-100 p-4">
+  <h5 class="mb-5 pb-4">Employee Listing</h5>
+  <div class="container bg-white p-3 my-5 rounded">
+    <div class="row py-3">
+      <div class="col-md-8">
+        <span class="form-control w-250px py-2 form-control-solid">
+          <img src="assets/search-icon.png" class="w-icon" />
+          <input
+            type="text"
+            placeholder="Search Employees"
+            class="d-inline form-control-solid border-0 px-2"
+            style="outline: 0"
+          />
+        </span>
       </div>
-      <div class="col-md-6">
-        <input type="text" class="form-control" placeholder="" />
-        <button class="btn bg-blue text-white">Add Employee</button>
+      <div class="col-md-4">
+        <select
+          class="form-control form-select form-control-solid w-150px d-inline mx-3"
+        >
+          <option value="10">10</option>
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
+
+        <button class="btn d-inline bg-blue text-white p-2 px-3">
+          Add Employee
+        </button>
       </div>
     </div>
     <table class="table">
@@ -19,22 +33,34 @@
         <tr>
           <th>NAME</th>
           <th>EMAIL</th>
-          <th>PHONE NO.</th>
+          <th>STATUS</th>
           <th>BRANCH</th>
           <th>PRIVELLGE</th>
-          <th>STATUS</th>
-          <th>SETTINGS</th>
+          <th>PHONE NO.</th>
+          <th>ACTIONS</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let employee of employees">
           <td class="emp-name">{{ employee.Name }}</td>
           <td>{{ employee.Email }}</td>
-          <td>{{ employee.PhoneNo }}</td>
+          <td>
+            <span *ngIf="employee.IsActive" class="active">Active</span>
+
+            <span *ngIf="!employee.IsActive" class="locked">Locked</span>
+          </td>
           <td>{{ employee.Branch }}</td>
           <td>{{ employee.Privellge }}</td>
-          <td>{{ employee.IsActive }}</td>
-          <td></td>
+          <td>{{ employee.PhoneNo }}</td>
+          <td>
+            <select
+              class="form-control form-select form-control-solid actions-select w-95px d-inline mx-3"
+            >
+              <option>Actions</option>
+              <option value="{{ employee.Employee_Id }}">Edit</option>
+              <option value="{{ employee.Employee_Id }}">Delete</option>
+            </select>
+          </td>
         </tr>
       </tbody>
     </table>
