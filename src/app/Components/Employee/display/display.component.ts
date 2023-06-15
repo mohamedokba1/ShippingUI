@@ -24,7 +24,7 @@ export class DisplayComponent implements OnInit {
       '12345',
       'cairo',
       'manager',
-      true
+      false
     ),
     new Employee(
       '1',
@@ -33,7 +33,7 @@ export class DisplayComponent implements OnInit {
       '12345',
       'cairo',
       'manager',
-      true
+      false
     ),
     new Employee(
       '1',
