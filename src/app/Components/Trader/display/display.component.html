@@ -1,1 +1,21 @@
-<p>display works!</p>
+<h1 *ngIf = "isError">Falid to load traders values</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Address</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let trader of traders">
+      <td>{{trader.Name}}</td>
+      <td>{{trader.Email}}</td>
+      <td>{{trader.Address}}</td>
+      <td>{{trader.PhoneNo}}</td>
+      <td>icons</td>
+    </tr>
+  </tbody>
+</table>
